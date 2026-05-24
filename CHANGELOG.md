@@ -1,4 +1,10 @@
-# @digitalbazaar/http-signature-zcap-invoke ChangeLog
+# @interop/http-signature-zcap-invoke ChangeLog
+
+## 6.1.2 - 
+
+### Changed
+- **BREAKING**: Forked from `@digitalbazaar/http-signature-zcap-invoke` to
+  `@interop/http-signature-zcap-invoke`, added TypeScript export, additional tests.
 
 ## 6.1.0 - 2025-10-08
 

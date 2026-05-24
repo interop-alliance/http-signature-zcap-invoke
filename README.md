@@ -1,6 +1,11 @@
-# http-signature-zcap-invoke _(@digitalbazaar/http-signature-zcap-invoke)_
+# http-signature-zcap-invoke _(@interop/http-signature-zcap-invoke)_
 
 A library for invoking Authorization Capabilities via HTTP signatures
+
+## Background
+
+* Forked from `@digitalbazaar/http-signature-zcap-invoke@6.1.0` to add TypeScript
+  types.
 
 ## Install
 
@@ -11,7 +16,7 @@ A library for invoking Authorization Capabilities via HTTP signatures
 To install from NPM:
 
 ```
-npm install @digitalbazaar/http-signature-zcap-invoke
+npm install @interop/http-signature-zcap-invoke
 ```
 
-[Web Crypto API]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API
+
