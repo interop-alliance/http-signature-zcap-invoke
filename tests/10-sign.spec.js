@@ -4,18 +4,19 @@
 import * as Ed25519Multikey from '@digitalbazaar/ed25519-multikey';
 import {
   CapabilityDelegation,
-  constants as zcapConstants,
   createRootCapability,
-  documentLoader as zcapDocLoader
+  constants as zcapConstants,
+  documentLoader as zcapDocLoader,
 } from '@digitalbazaar/zcap';
-import jsigs from 'jsonld-signatures';
-import {documentLoader as ed25519ContextLoader} from 'ed25519-signature-2020-context';
+import {documentLoader as ed25519ContextLoader} from
+  'ed25519-signature-2020-context';
 import {Ed25519Signature2020} from '@digitalbazaar/ed25519-signature-2020';
+import jsigs from 'jsonld-signatures';
 import {constants as securityContextConstants} from 'security-context';
 import {shouldBeAnAuthorizedRequest} from './test-assertions.js';
 import {signCapabilityInvocation} from '../lib/index.js';
 import {
-  verifyCapabilityInvocation
+  verifyCapabilityInvocation,
 } from '@digitalbazaar/http-signature-zcap-verify';
 
 const {SECURITY_CONTEXT_V2_URL} = securityContextConstants;
@@ -245,9 +246,6 @@ describe('signCapabilityInvocation', function() {
         it('a valid root zCap with non-JSON body Blob', async function() {
           const nonce1 = crypto.randomUUID();
           const body1 = new Blob([nonce1], {type: `text/plain+${nonce1}`});
-          /**
-           * @param {Blob} body - Body of http request that should be signed.
-           */
           async function signBody(body) {
             return signCapabilityInvocation({
               url: TEST_URL,
@@ -282,10 +280,6 @@ describe('signCapabilityInvocation', function() {
 
         it('a valid root zCap with non-JSON body Uint8Array', async function() {
           const body1 = new Uint8Array([1, 2, 3]);
-          /**
-           * @param {Uint8Array} body - Body of http request that should be
-           * signed.
-           */
           async function signBody(body) {
             return signCapabilityInvocation({
               url: TEST_URL,
@@ -319,10 +313,6 @@ describe('signCapabilityInvocation', function() {
 
         it('a valid root zCap with Uint8Array w/plain text', async function() {
           const body1 = new TextEncoder().encode('abc');
-          /**
-           * @param {Uint8Array} body - Body of http request that should be
-           * signed.
-           */
           async function signBody(body) {
             return signCapabilityInvocation({
               url: TEST_URL,
@@ -474,12 +464,15 @@ describe('signCapabilityInvocation', function() {
               return {contextUrl: null, documentUrl: uri,
                 document: delegatorRootCap};
             }
-            try { return await ed25519ContextLoader(uri); } catch(e) {}
+            try {
+              return await ed25519ContextLoader(uri);
+            } catch(e) {}
             return zcapDocLoader(uri);
           };
           const signedZcap = await jsigs.sign(delegatedZcap, {
             suite: new Suite({key: delegatorKey}),
-            purpose: new CapabilityDelegation({parentCapability: delegatorRootCap}),
+            purpose: new CapabilityDelegation(
+              {parentCapability: delegatorRootCap}),
             documentLoader: docLoader
           });
           const signed = await signCapabilityInvocation({
@@ -802,7 +795,7 @@ describe('signCapabilityInvocation', function() {
             '"body" and "json" must not be provided together.');
         });
 
-        it('a root zCap with an empty string capabilityAction', async function() {
+        it('root zCap with an empty string capabilityAction', async function() {
           let error;
           let result = null;
           try {
@@ -820,7 +813,8 @@ describe('signCapabilityInvocation', function() {
           should.not.exist(result);
           should.exist(error);
           error.cause.should.be.an.instanceOf(TypeError);
-          error.cause.message.should.contain('"capabilityAction" must be a string.');
+          error.cause.message.should
+            .contain('"capabilityAction" must be a string.');
         });
       });
     });
