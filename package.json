@@ -4,12 +4,19 @@
   "description": "A library for invoking Authorization Capabilities via HTTP signatures",
   "license": "BSD-3-Clause",
   "type": "module",
-  "exports": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "types": "./lib/index.d.ts",
   "browser": {
     "./lib/util.js": "./lib/util-browser.js"
   },
   "files": [
-    "lib/**/*.js"
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
   ],
   "scripts": {
     "test": "npm run test-node",
@@ -21,8 +28,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@digitalbazaar/http-digest-header": "^2.2.1",
-    "@digitalbazaar/http-signature-header": "^5.0.1",
+    "@interop/http-digest-header": "^2.3.2",
+    "@interop/http-signature-header": "^5.0.2",
     "pako": "^2.1.0"
   },
   "devDependencies": {
