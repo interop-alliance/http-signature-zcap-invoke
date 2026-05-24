@@ -1,6 +1,6 @@
 # @interop/http-signature-zcap-invoke ChangeLog
 
-## 6.1.2 - 
+## 6.1.2 - 2026-05-24
 
 ### Changed
 - **BREAKING**: Forked from `@digitalbazaar/http-signature-zcap-invoke` to
