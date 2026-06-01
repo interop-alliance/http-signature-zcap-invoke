@@ -1,6 +1,6 @@
 # @interop/http-signature-zcap-invoke ChangeLog
 
-## 6.2.0 - TBD
+## 6.2.0 - 2026-06-01
 
 ### Changed
 - Use the shared `ISigner` and `IZcap` types from `@interop/data-integrity-core`
