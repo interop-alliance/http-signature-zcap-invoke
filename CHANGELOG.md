@@ -1,5 +1,12 @@
 # @interop/http-signature-zcap-invoke ChangeLog
 
+## 6.2.0 - TBD
+
+### Changed
+- Use the shared `ISigner` and `IZcap` types from `@interop/data-integrity-core`
+  for the exported TypeScript types and JSDocs, replacing the locally-defined
+  `InvocationSigner` and `ZCap` interfaces.
+
 ## 6.1.2 - 2026-05-24
 
 ### Changed

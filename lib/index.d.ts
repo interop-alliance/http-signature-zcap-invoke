@@ -1,25 +1,9 @@
 /*!
  * Copyright (c) 2019-2025 Digital Bazaar, Inc. All rights reserved.
  */
+import type {ISigner, IZcap} from '@interop/data-integrity-core';
 
-export interface InvocationSigner {
-  /** Key ID used to verify the HTTP signature. */
-  id: string;
-  /** Signs data bytes and returns a signature. */
-  sign(options: {data: Uint8Array}): Promise<Uint8Array>;
-}
-
-export interface ZCap {
-  /** The capability ID. */
-  id: string;
-  /**
-   * Present on delegated zcaps; causes the full object to be
-   * gzip-compressed and base64url-encoded into the
-   * `capability-invocation` header rather than using only the ID.
-   */
-  parentCapability?: string;
-  [key: string]: unknown;
-}
+export type {ISigner, IZcap};
 
 export interface SignedHeaders {
   /** HTTP Signature `Authorization` header. */
@@ -62,14 +46,14 @@ export interface SignCapabilityInvocationOptions {
    * Defaults to `urn:zcap:root:<encodeURIComponent(url)>`.
    * Root zcap objects (no `parentCapability`) are treated as root invocations.
    */
-  capability?: string | ZCap;
+  capability?: string | IZcap;
   /** The action to perform with the capability (e.g. `'read'`, `'write'`). */
   capabilityAction: string;
   /**
    * Signer object whose interface matches `@digitalbazaar/ed25519-multikey`'s
    * `.signer()` return value.
    */
-  invocationSigner: InvocationSigner;
+  invocationSigner: ISigner;
   /**
    * Signature creation time. Accepts a UNIX timestamp (seconds), a `Date`,
    * or a numeric string. Defaults to the current time.
