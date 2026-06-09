@@ -1,6 +1,6 @@
 # @interop/http-signature-zcap-invoke ChangeLog
 
-## 6.2.2 - 2026-06-
+## 6.2.2 - 2026-06-09
 
 ### Changed
 - Update to latest `@interop/data-integrity-core`.
