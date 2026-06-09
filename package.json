@@ -25,14 +25,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@interop/data-integrity-core": "^6.4.0",
+    "@interop/data-integrity-core": "^7.0.0",
     "@interop/http-digest-header": "^2.3.2",
     "@interop/http-signature-header": "^5.0.2",
     "pako": "^2.1.0"
   },
   "devDependencies": {
-    "@digitalbazaar/ed25519-signature-2020": "^5.0.0",
-    "@digitalbazaar/http-signature-zcap-verify": "^11.0.0",
+    "@digitalbazaar/ed25519-signature-2020": "^5.4.0",
+    "@digitalbazaar/http-signature-zcap-verify": "^11.2.0",
     "@digitalbazaar/zcap": "^9.0.0",
     "chai": "^4.3.6",
     "cross-env": "^10.1.0",
