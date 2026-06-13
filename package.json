@@ -25,8 +25,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@interop/data-integrity-core": "^7.0.0",
-    "@interop/http-digest-header": "^2.3.2",
+    "@interop/data-integrity-core": "^8.0.0",
+    "@interop/http-digest-header": "^3.0.0",
     "@interop/http-signature-header": "^5.0.2",
     "pako": "^2.1.0"
   },
