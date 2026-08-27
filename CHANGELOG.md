@@ -1,6 +1,6 @@
 # @interop/http-signature-zcap-invoke ChangeLog
 
-## 6.2.6 - TBD
+## 6.2.6 - 2026-08-27
 
 ### Changed
 - Update to latest `@interop/http-digest-header`.
