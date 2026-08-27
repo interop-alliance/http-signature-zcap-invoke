@@ -27,7 +27,7 @@
   "dependencies": {
     "@interop/data-integrity-core": "^8.7.1",
     "@interop/http-digest-header": "^3.1.0",
-    "@interop/http-signature-header": "^5.0.2",
+    "@interop/http-signature-header": "^5.0.3",
     "pako": "^2.1.0"
   },
   "devDependencies": {
